@@ -1,20 +1,33 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Página de Apresentação</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Bem-vindo ao App de Previsão do Tempo</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Este aplicativo permite que você pesquise as informações meteorológicas de qualquer lugar do mundo e veja as condições climáticas atuais.
+      Você também pode visualizar o clima de um lugar aleatória.
+    </ion-card-content>
+  </ion-card>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <!-- Botão para pesquisar o clima -->
+        <ion-button expand="full" (click)="navigateToWeatherPage()">Pesquisar Clima</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <!-- Botão para buscar uma cidade aleatória -->
+        <ion-button expand="full" (click)="getRandomWeather()">Clima Aleatório</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

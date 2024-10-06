@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Previsão do Tempo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Digite o nome da cidade</ion-label>
+    <ion-input [(ngModel)]="city"></ion-input>
+  </ion-item>
+
+  <!-- Botão de confirmação -->
+  <ion-button expand="full" (click)="getWeather()">Buscar Previsão</ion-button>
+
+  <!-- Botão para buscar uma cidade aleatória -->
+  <ion-button expand="full" (click)="getRandomWeather()">Clima Aleatório</ion-button>
+
+  <!-- Exibe os dados do clima, se disponíveis -->
+  <ion-card *ngIf="weatherData">
+    <ion-card-header>
+      <ion-card-title>{{ weatherData.name }} - {{ weatherData.weather[0].description }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Temperatura: {{ weatherData.main.temp }} °C</p>
+      <p>Humidade: {{ weatherData.main.humidity }}%</p>
+      <p>Vento: {{ weatherData.wind.speed }} km/h</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
